@@ -1,0 +1,36 @@
+@model Project.Models.Login
+@{
+    ViewData["Title"] = "LOG IN";
+}
+
+<div id="topper">
+  <br><br>
+<h1 style="text-align: center;">@ViewData["Title"]</h1>
+<br><br>
+</div>
+
+
+
+<div class="login-box">
+  <h2>Login</h2>
+  <form method="post" asp-controller="home" asp-action="Login">
+    <div class="user-box">
+      
+      <input asp-for="@Model.Name" required=""><label>Username</label>
+      
+    </div>
+
+    <div class="user-box">
+      
+      <input asp-for="@Model.Password" type="password" required=""><label>Password</label>
+     
+    </div>
+      <br><br>
+      <button mdbRipple rippleColor="dark" type="submit"class="btn btn-outline-success btn-rounded" style="size: 4ch;">
+       Submit</button>
+      <br>  
+        <p style="color: gray;"> First time Here? <a href="@Url.Action("SignUp", "Home")" style="color: inherit;">Create new Account</a></p>
+  </form>
+</div>
+
+<br><br><br>

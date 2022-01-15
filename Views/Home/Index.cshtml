@@ -1,0 +1,129 @@
+﻿@{
+    ViewData["Title"] = "Home";
+}
+
+<div class="jumbotron" style="background-image: url('/images/Techno.jpg');border: 1px solid green;background-size: cover">
+      
+      <h1 style="color: white;text-shadow:black 5px 5px 1ch">PICK YOUR ITEM & WE DELIVER</h1>
+    <br><br><br><br><br>
+    <br><br><br><br><br><br>
+     <a class="nav-link text-light" asp-controller="Product" asp-action="List">
+       <button mdbRipple rippleColor="dark" type="button"class="btn btn-outline-success btn-rounded" style="size: 4ch;"> 
+        SHOP NOW</button>
+    </a>
+</div>
+
+<br><br>
+
+
+<br><br><br>
+<div class="text-center">
+ <p style="text-align: center;">
+   <h1><a id="Highlight">Build Your Setup</a></h1> <h3>We Have The Mix Of
+    <a id="Highlight">Buisness</a> & <a id="Highlight">Gaming</a> & <a id="Highlight">Programming</a></h3> 
+   </p>
+    <br><br>
+  <div class="row">
+    <div class="col-md-4" ><img id="Setup" style="background-image: url('/images/businessSetup.jpg');">
+    </div>
+
+    <div class="col-md-4" ><img id="Setup" style="background-image: url('/images/GamingSetup.jpg');">
+    </div>
+
+    <div class="col-md-4" ><img id="Setup" style="background-image: url('/images/programmerSetup.jpg');">
+    </div>
+      
+  </div>   
+
+</div>
+<br><br><br>
+
+<div class="text-center" style="text-align: center;border-top: 1px solid green;" >
+    <br>
+    <p style="text-align: center;"><h1>Starting <a id="Highlight">Virtual Reality</a> Poducts Soon</h1>
+    <h4>Dive into the virtual reality experience with the Amazing Oculus & VR!</h4>
+    <br><a id="Catext">COMING SOON</a></p>
+    <br>
+    <div class="container">
+   <div class="row">
+    <div class="col-md-6" ><img id="Coming" style="background-image: url('/images/oculus.jpg');">
+    </div>
+ 
+    <div class="col-md-6" ><img id="Coming" style="background-image: url('/images/Vr1.jpg');">
+    </div>
+    
+    
+  </div>
+    </div>
+    </div>
+</div>
+
+<br><br>
+<div class="Categ" style="text-align: center;border-top: 1px solid green;">
+   <br>
+    <p style="text-align: center;"><h1>Start <a id="Highlight">Shopping</a> Now</h1>
+    <h4>
+    Enjoy the best shopping experience and choose from below categories</h4></p>
+    
+ <div class="row" style="align-items: center;">
+    <div class="col-md-4" >
+        <p><br><br><br></p>
+       <img id="Category" style="background-image: url('/images/accCategory.jpg');"><br><br>
+       <a asp-controller="Product" asp-action="Accessory" asp-route-id="Accessory"  style="text-align: center;text-decoration:none">
+         <div id="Catext"><p>Accessories</p></div></a>
+       </div>
+     
+     <div class="col-md-4">
+        <p><br><br><br></p>
+       <img id="Category" style="background-image: url('/images/LapCateg.png');"><br><br>
+       <a asp-controller="Product" asp-action="Laptop" asp-route-id="Laptop"  style="text-align: center;text-decoration:none">
+         <div id="Catext"><p>LAPTOPs</p></div></a>
+     </div>
+
+       <div class="col-md-4">
+        <p><br><br><br></p>
+       <img id="Category" style="background-image: url('/images/CaseCateg.jpg');"><br><br>
+       <a asp-controller="Product" asp-action="PC" asp-route-id="PC"  style="text-align: center;text-decoration:none">
+         <div id="Catext"><p>PCs</p></div></a>
+       </div>
+ </div>
+</div>
+
+
+<br><br><br><br>
+
+<div class="text-center" id="Policy">
+    <br><br>
+    <div class="container">
+  <div class="row">
+    <div class="col-sm">
+      <i class="fas fa-shipping-fast fa-5x"></i>
+     <p><h4>Delivery & Shipping</h4>Our delivery is contracted with ARAMEX at low prices.</p>
+    </div>
+    <div class="col-sm">
+      <i class="fas fa-exchange-alt fa-5x"></i>
+      <p><h4>Return Policy</h4>We accept Item Return at a maximum date of 7 days since Item being delivered.</p>
+    </div>
+    <div class="col-sm">
+      <i class="far fa-clock fa-5x"></i>
+      <p><h4>Warranty</h4>Our Warranty is 3 days from the day you get your Item.</p>
+    </div>
+  </div>
+    </div>
+    </div>
+</div>
+
+
+<br>
+
+<div id="Banner">
+  <br>
+    <div id="textBanner">
+    <p><br><br>Get Best Items<br>At Highest Quality</p><br>
+    <a  asp-controller="Product" asp-action="List">
+      <button mdbRipple rippleColor="dark" type="button"class="btn btn-outline-success btn-rounded" style="size: 4ch;" >
+        Shop Now</button></a>
+    </div>
+    <br><br>
+</div>
+<br><br>

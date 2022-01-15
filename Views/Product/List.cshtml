@@ -1,0 +1,68 @@
+@model List<Product>
+@{
+    ViewBag.Title = "Product List";
+}
+<h1 style="text-align: center;"> Get your <a id="Highlight">Items</a> at the <a id="Highlight">Best Prices</a> on the Market</h1>
+<br><br><br>
+
+<h3 style="text-align: center;">Choose from <a id="Highlight">Category</a> below or View All Items</h3>
+<br><br>
+
+<div class="container" style="width:600px;text-align: center;margin: 0 auto;border-top: 1px solid green;">
+    <br><br>
+<div class="row" style="text-align: center;">
+    <br><br>
+    <div class="col-sm-4"><a asp-controller="Product" asp-action="Laptop" style="text-align: center;text-decoration:none;color: green">
+        <i class="fas fa-laptop fa-5x"></i></a></div>
+    <br>
+    <div class="col-sm-4"><a asp-controller="Product" asp-action="PC"  style="text-align: center;text-decoration:none;color: green">
+        <i class="fas fa-desktop fa-5x"></i></a></div>
+    <br>
+    <div class="col-sm-4"><a asp-controller="Product" asp-action="Accessory"  style="text-align: center;text-decoration:none;color: green">
+        <i class="fas fa-headphones fa-5x"></i></a></div>
+    </div>
+    
+    <div class="row" style="text-align: center;border-bottom: 1px solid green;">
+    <div class="col-sm-4" id="textCat"><p>Laptop</p></div>
+    <br>
+    <div class="col-sm-4" id="textCat"><p>PC</p></div>
+    <br>
+    <div class="col-sm-4" id="textCat"><p>Accessory</p></div>
+    <br><br>
+    </div>
+</div>
+
+
+<br>
+<h1><a id="Highlight">ALL</a> Products </h1>
+    <div class="col-sm-10">
+        <table class="table table-bordered " id="TableItems">
+            <thead>
+                <tr style="color: white;">
+                    <th>Name</th>
+                    <th>Price</th>
+                    <th>Details</th>
+                    <th>Add to Cart</th>
+            </thead>
+            <tbody>
+                @foreach (var product in Model)
+                {
+                    <tr style="color: white;">
+                        <td>@product.Name</td>
+                        <td>@product.Price.ToString("C")</td>
+                        <td>
+                            <a asp-controller="Product" asp-action="Details"
+                               asp-route-id="@product.ProductID"
+                               asp-route-slug="@product.Slug " style="text-decoration: none;color: green">View Item</a>
+                        </td>
+                        <td>
+                            <a style="text-decoration: none;color: green" 
+                                href="@Url.Action("AddItem", "Cart", new { id = @product.ProductID })">
+                            Add Item to Cart</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

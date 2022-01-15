@@ -1,0 +1,32 @@
+@model Project.Models.VProduct
+@{
+    ViewData["Title"] = "Add Item";
+}
+<br>
+
+<div class="login-box">
+  <h2>@ViewData["Title"]</h2>
+  <form enctype="multipart/form-data" method="post" asp-area="Admin" asp-action="AddItem" asp-controller="Product">
+    <div class="user-box">
+      <input asp-for="@Model.Name" required=""><label>Name</label></div>
+      
+     <div class="user-box">
+      <input asp-for="@Model.Price" required=""><label>Price</label></div>
+     
+    <div class="user-box">
+      <input asp-for="@Model.Category" style="height: 40px;"  required=""><label>Category</label></div>
+      <div class="user-box">
+        <input asp-for="@Model.Image" type="file">
+                  
+  
+      </div>
+  
+    <button mdbRipple rippleColor="dark"
+    type="submit"class="btn btn-outline-success btn-rounded" style="size: 4ch;">
+    Add Item</button>
+        
+  </form>
+
+</div>
+
+<br><br>

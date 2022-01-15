@@ -1,0 +1,27 @@
+@{
+    ViewData["Title"] = "MyCart";
+}
+
+
+<br><br>
+<h2><a id="Highlight">My</a> Cart </h2>
+<br>
+
+<table class="table table-bordered " id="TableItems">
+  <thead>
+    <tr style="color: white;">
+    <th>Name</th>
+    <th>Price</th>
+    </tr>
+  </thead>
+ <tbody>
+ @foreach (var product in Model)
+ {
+  <tr style="color: white;">
+  <td>@product.Name</td>
+  <td>@product.Price.ToString("C")</td>
+  </tr>
+  }
+ </tbody>
+</table>
+

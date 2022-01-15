@@ -1,0 +1,43 @@
+@model Project.Models.SignUp
+@{
+    ViewData["Title"] = "Sign Up";
+}
+
+<div id="topper">
+  <br><br>
+<h1 style="text-align: center;">@ViewData["Title"]</h1>
+<br><br>
+</div>
+
+
+
+<div class="login-box">
+  <h2>Create New Account</h2>
+  <form enctype="multipart/form-data" method="post" asp-action="SignUp" asp-controller="home">
+    <div class="user-box">
+      
+      <input asp-for="@Model.AccountName" required=""><label>Username</label>
+      
+    </div>
+
+    <div class="user-box">
+      
+      <input asp-for="@Model.Phonenumber" type="text" required=""><label>Phone Number</label>
+     
+    </div>
+
+    <div class="user-box">
+      
+      <input asp-for="@Model.Password" type="password" required=""><label>Password</label>
+     
+    </div>
+    
+
+   <br><br>
+      <button mdbRipple rippleColor="dark"
+       type="submit"class="btn btn-outline-success btn-rounded" style="size: 4ch;">
+        Sign Up</button>
+  </form>
+</div>
+
+<br><br><br>

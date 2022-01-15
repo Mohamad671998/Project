@@ -1,0 +1,34 @@
+@model Project.Models.Product
+@{
+    ViewData["Title"] = "Cart";
+}
+<h6 id="Catext" style="text-align: center;">Item(s) added @ViewBag.ProductSlug to your cart.</h6>
+<br>
+<p id="Catext"  style="text-align: center;">Order now and Pay Cash when Delivery Arrive!</p>
+
+<br><br>
+<form action="" method="post">
+  <input type="hidden" asp-for="@Model.ProductID">
+  <table class="table " id="TableItems">
+  <thead>
+    <tr  style="text-decoration: none;color: green">
+    <th>Name</th>
+    <th>Price</th>
+    </tr>
+  </thead>
+  <tbody>
+  <tr style="color: white;">
+  <td>@Model.Name</td>
+  <td>@Model.Price.ToString("C")</td>
+  </tr>
+  </tbody>
+  </table>
+</form>
+<br><br>
+
+    <button mdbRipple rippleColor="dark" onclick="return confirm('Confirm Order?');" type="button"class="btn btn-outline-success btn-rounded" style="size: 4ch;" >
+    Proceed to payment
+    </button>
+</div>
+
+
