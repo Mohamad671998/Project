@@ -51,6 +51,7 @@ namespace Project.Controllers
             return View();
         }
 
+        /*SIGN UP ---------------------------------------------*/
          public IActionResult SignUp()
         {
             return View();
@@ -94,6 +95,8 @@ namespace Project.Controllers
             return ac.AccountID;
         }
     
+
+    /*LOGIN---------------------------------------------------------------------*/
 
     [HttpPost]
     public IActionResult Login(Login log)

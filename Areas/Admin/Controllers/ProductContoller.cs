@@ -101,16 +101,35 @@ namespace Project.Areas.Admin.Controllers
 
 
         //Update Item**********************//
+        
         public IActionResult Update(int id)
         {
             Product it=context.Products.FirstOrDefault(c => c.ProductID == id);
-            return View(it);
-        }
-       
-        [HttpPost]
-         public async Task<IActionResult> Update(Product item)
+	        VProduct vp=new VProduct();
+	        vp.Name=it.Name;
+	        vp.Price=it.Price;
+	        vp.Category =it.Category;
+	        vp.ProductID=it.ProductID;
+            return View(vp);
+            }
+             [HttpPost]
+         public async Task<IActionResult> Update(VProduct item)
         {
-                await updateDB(item);
+		        Product p=new Product();
+			    p.ProductID = item.ProductID;
+                p.Category = item.Category;
+                p.Price = item.Price;
+                p.Name = item.Name;
+				if(item.Image!=null)
+                {
+				string path = Path.Combine(enviroment.WebRootPath, "images");
+                FileStream stream = new FileStream(Path.Combine(path, p.ProductID + ".jpg"), FileMode.Create);
+                item.Image.CopyTo(stream);
+                stream.Close();
+				}
+                    
+                p.imageURL = "~/images/" + p.ProductID + ".jpg";
+                await updateDB(p);
                 return RedirectToAction("List","Product",new { area = "Admin" });
         }
 

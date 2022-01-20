@@ -1,12 +1,18 @@
+@model Project.Models.Product
 @{
     ViewData["Title"] = "MyCart";
 }
 
-
+<div id="topper">
+  <br><br>
+<h1 style="text-align: center;">@ViewData["Title"]</h1>
 <br><br>
-<h2><a id="Highlight">My</a> Cart </h2>
+</div>
+<br><br>
+<h6 id="Catext" style="text-align: center;">Still no Item(s) added @ViewBag.ProductSlug to your cart</h6>
 <br>
-
+<p id="Catext"  style="text-align: center;">Order now and Pay Cash when Delivery Arrive!</p>
+<br><br>
 <table class="table table-bordered " id="TableItems">
   <thead>
     <tr style="color: white;">
@@ -15,13 +21,12 @@
     </tr>
   </thead>
  <tbody>
- @foreach (var product in Model)
- {
-  <tr style="color: white;">
-  <td>@product.Name</td>
-  <td>@product.Price.ToString("C")</td>
+ <tr style="color: white;">
+
+  <td>No Product</td>
+  <td>No Product</td>
+
   </tr>
-  }
  </tbody>
 </table>
 

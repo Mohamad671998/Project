@@ -30,18 +30,18 @@ namespace Project.Controllers
             return View(it);
         }
        
-        [HttpPost]
-         public async Task<IActionResult> AddItem(Product item)
-        {
-                await addDB(item);
-                return RedirectToAction("List","Product",new { area = "Admin" });
-        }
+        // [HttpPost]
+        //  public async Task<IActionResult> AddItem(Product item)
+        // {
+        //         await addDB(item);
+        //         return RedirectToAction("List","Product",new { area = "Admin" });
+        // }
 
-        public async Task addDB(Product pr)
-        {
-            context.Add(pr);
-            await context.SaveChangesAsync();
-        }
+        // public async Task addDB(Product pr)
+        // {
+        //     context.Add(pr);
+        //     await context.SaveChangesAsync();
+        // }
     
 
     }
